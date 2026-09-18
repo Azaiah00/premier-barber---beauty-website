@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as m with context %}
+{% block main %}
+<section class="phero">
+  <div class="hex-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="{{ R }}index.html">Home</a></li><li aria-current="page">Team</li></ol>
+    <h1 class="display h1" data-split>The <span class="em">team.</span></h1>
+    <p class="lede" data-reveal>Five barbers and one braid-and-wig specialist, each with their own following, their own book and hundreds of verified reviews between them. Find the one who fits your style.</p>
+    <div class="filters" style="margin:30px 0 0" role="group" aria-label="Filter team">
+      <button class="filter" type="button" data-team-filter="all" aria-pressed="true">Everyone ({{ TEAM|length }})</button>
+      <button class="filter" type="button" data-team-filter="barber" aria-pressed="false">Barbers ({{ TEAM|selectattr('kind','equalto','barber')|list|length }})</button>
+      <button class="filter" type="button" data-team-filter="beauty" aria-pressed="false">Braids &amp; wigs ({{ TEAM|selectattr('kind','equalto','beauty')|list|length }})</button>
+    </div>
+  </div>
+</section>
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="grid team-grid">
+      {% for p in TEAM %}<div data-reveal data-kind="{{ p.kind }}">{{ m.pro_card(p) }}</div>{% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section--tight">
+  <div class="wrap">
+    <div class="head">{{ m.kicker('', 'Side by side') }}<h2 class="display h2" data-split>Who does <span class="em">what.</span></h2></div>
+    <div style="overflow-x:auto" data-reveal>
+      <table class="compare">
+        <thead><tr><th scope="col">Pro</th><th scope="col">Known for</th><th scope="col">Adult cut from</th><th scope="col">Kids</th><th scope="col">Rating</th><th scope="col"><span class="sr-only">Book</span></th></tr></thead>
+        <tbody>
+        {% for p in TEAM %}<tr>
+          <th scope="row"><a href="{{ R }}team/{{ p.slug }}.html">{{ p.name }}</a><small>{{ p.role }}</small></th>
+          <td>{{ p.specialties[:3]|join(', ') }}</td>
+          <td class="num">{{ p.from_price }}</td>
+          <td>{{ 'Yes' if p.kids else '—' }}</td>
+          <td class="num">★ {{ '%.1f' % p.rating }} <small>({{ p.reviews }})</small></td>
+          <td><a class="btn btn--sm" href="{{ p.book_url }}" target="_blank" rel="noopener">Book</a></td>
+        </tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{{ m.cta_band('Found <span class="em">your</span> pro?', 'Tap “Book” on any card to go straight to their live calendar, or use our booking concierge and we’ll walk you through it.') }}
+{% endblock %}
+{% block scripts %}
+<script>
+document.querySelectorAll('[data-team-filter]').forEach(b=>b.addEventListener('click',()=>{const f=b.dataset.teamFilter;document.querySelectorAll('[data-team-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.querySelectorAll('.team-grid>[data-kind]').forEach(c=>{c.hidden=!(f==='all'||c.dataset.kind===f)});if(window.ScrollTrigger)ScrollTrigger.refresh()}));
+</script>
+{% endblock %}

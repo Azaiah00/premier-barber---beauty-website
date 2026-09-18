@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ canonical }}">
+<meta name="theme-color" content="#05060b">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ S.name }}">
+<meta property="og:title" content="{{ og_title or title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ S.domain }}/assets/brand/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="geo.region" content="US-VA"><meta name="geo.placename" content="Midlothian"><meta name="geo.position" content="{{ S.geo[0] }};{{ S.geo[1] }}"><meta name="ICBM" content="{{ S.geo[0] }}, {{ S.geo[1] }}">
+<link rel="icon" href="{{ R }}favicon.ico" sizes="48x48">
+<link rel="icon" href="{{ R }}assets/brand/premier-monogram.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ R }}apple-touch-icon.png">
+<link rel="manifest" href="{{ R }}site.webmanifest">
+<link rel="preload" href="{{ R }}assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ R }}assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+{% if preload_img %}<link rel="preload" as="image" href="{{ R }}assets/img/{{ preload_img }}" fetchpriority="high">{% endif %}
+<link rel="stylesheet" href="{{ R }}assets/css/site.css?v={{ V }}">
+<script>(function(d){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('js');setTimeout(function(){if(!window.gsap)d.classList.remove('js')},2500)}})(document.documentElement)</script>
+{% for ld in jsonld %}<script type="application/ld+json">{{ ld | safe }}</script>
+{% endfor %}
+</head>
+<body class="page-{{ page }}">
+<a class="skip" href="#main">Skip to content</a>
+{% include 'icons.html' %}
+<div class="pole" aria-hidden="true"><div class="pole__fill"></div></div>
+
+<header class="nav" role="banner">
+  <div class="wrap">
+    <a class="brand" href="{{ R }}index.html" aria-label="{{ S.name }}: home">
+      <img class="brand__mono" src="{{ R }}assets/brand/premier-monogram.svg" alt="" width="42" height="42">
+      <img class="brand__word" src="{{ R }}assets/brand/premier-wordmark-white.svg" alt="Premier Barber &amp; Beauty Salon" width="170" height="30">
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      {% for href, label, key in NAV %}<a href="{{ R }}{{ href }}"{% if key == page %} aria-current="page"{% endif %}>{{ label }}</a>
+      {% endfor %}
+    </nav>
+    <div class="nav__cta">
+      <a class="nav__phone" href="{{ S.phone_href }}"><svg aria-hidden="true"><use href="#i-phone"/></svg>{{ S.phone }}</a>
+      <a class="btn btn--sm" href="{{ R }}book.html">Book now<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mmenu" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <nav class="mmenu__links" aria-label="Mobile">
+    <a href="{{ R }}index.html"><small>00</small>Home</a>
+    {% for href, label, key in NAV %}<a href="{{ R }}{{ href }}"><small>{{ '%02d' % loop.index }}</small>{{ label }}</a>
+    {% endfor %}
+  </nav>
+  <div class="mmenu__foot">
+    <a class="btn btn--block" href="{{ R }}book.html">Book your chair<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <a class="btn btn--ghost btn--block" href="{{ S.phone_href }}"><svg aria-hidden="true"><use href="#i-phone"/></svg>{{ S.phone }}</a>
+    <p>{{ S.street }}, {{ S.city }}, {{ S.region }} {{ S.zip }}</p>
+  </div>
+</div>
+
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+
+<footer class="foot" role="contentinfo">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <img class="foot__badge" src="{{ R }}assets/brand/premier-badge-ondark.svg" alt="Premier Barber &amp; Beauty Salon badge" width="260" height="173" loading="lazy">
+        <p class="muted">Master barbers and beauty pros under one roof on Hull Street Road. Serving Midlothian, Chesterfield and greater Richmond.</p>
+        <div class="foot__social">
+          <a href="{{ S.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a href="{{ S.facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
+          <a href="{{ S.maps_url }}" target="_blank" rel="noopener" aria-label="Google Maps directions"><svg aria-hidden="true"><use href="#i-pin"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="{{ S.maps_url }}" target="_blank" rel="noopener">{{ S.street }}<br>{{ S.city }}, {{ S.region }} {{ S.zip }}</a></li>
+          <li><a href="{{ S.phone_href }}">{{ S.phone }}</a></li>
+          <li><a href="{{ S.sms_href }}">Text the shop</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul class="muted">
+          {% for d, o, c in S.hours %}<li>{{ d[:3] }} · {% if o %}{{ fmt(o) }} – {{ fmt(c) }}{% else %}Closed{% endif %}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h4>Book a pro</h4>
+        <ul>
+          {% for p in TEAM %}<li><a href="{{ R }}team/{{ p.slug }}.html">{{ p.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="foot__mega" aria-hidden="true">Premier</div>
+    <div class="foot__legal">
+      <span>© <span data-year>2026</span> {{ S.name }}. All rights reserved.</span>
+      <span>Ratings and reviews come from each pro’s verified Booksy, StyleSeat and theCut profiles.</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions">
+  <a href="{{ S.phone_href }}"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+  <a href="{{ S.maps_url }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Directions</a>
+  <a class="book" href="{{ R }}book.html"><svg aria-hidden="true"><use href="#i-cal"/></svg>Book now</a>
+</nav>
+
+<script type="application/json" id="shop-hours-data">{{ hours_json | safe }}</script>
+<script src="{{ R }}assets/vendor/gsap.min.js" defer></script>
+<script src="{{ R }}assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="{{ R }}assets/vendor/lenis.min.js" defer></script>
+<script src="{{ R }}assets/js/site.js?v={{ V }}" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

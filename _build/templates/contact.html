@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as m with context %}
+{% block main %}
+<section class="phero">
+  <div class="hex-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="{{ R }}index.html">Home</a></li><li aria-current="page">Contact</li></ol>
+    <h1 class="display h1" data-split>Pull <span class="em">up.</span></h1>
+    <p class="lede" data-reveal>We’re at {{ S.street }} (US-360) in Midlothian, serving Chesterfield and greater Richmond. Call, text, or send a message below.</p>
+  </div>
+</section>
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap">{{ m.visit_block() }}</div>
+</section>
+<section class="section--tight">
+  <div class="wrap visit">
+    <div>
+      {{ m.kicker('', 'Send a message') }}
+      <h2 class="display h2" style="margin-top:14px" data-split>Say <span class="em">hello.</span></h2>
+      <p class="lede" style="margin-top:18px" data-reveal>Questions about a service, a group booking, an event or a booth? Send a note and the shop will get back to you. For appointments, booking online is fastest.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px" data-reveal>
+        <a class="btn" href="{{ R }}book.html">Book online<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost" href="{{ S.sms_href }}"><svg aria-hidden="true"><use href="#i-msg"/></svg>Text us</a>
+      </div>
+    </div>
+    <form class="form-card" name="contact" method="POST" action="{{ R }}thanks.html" data-netlify="true" netlify-honeypot="company" data-reveal>
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+      <div class="fields-2">
+        <div class="field"><label for="c-first">First name</label><input id="c-first" name="first_name" autocomplete="given-name" required></div>
+        <div class="field"><label for="c-last">Last name</label><input id="c-last" name="last_name" autocomplete="family-name" required></div>
+      </div>
+      <div class="fields-2">
+        <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="c-phone">Phone <span class="muted">(optional)</span></label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="field"><label for="c-topic">Topic</label>
+        <select id="c-topic" name="topic"><option>General question</option><option>Service question</option><option>Group or event booking</option><option>Booth rental / joining the team</option><option>Feedback</option></select>
+      </div>
+      <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message" required></textarea></div>
+      <button class="btn btn--block" type="submit" style="margin-top:22px">Send message<svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <p class="fine">Enjoyed your visit? A quick Google review helps the shop grow. Thank you!</p>
+    </form>
+  </div>
+</section>
+{% endblock %}

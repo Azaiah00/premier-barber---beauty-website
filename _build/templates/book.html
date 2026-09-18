@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as m with context %}
+{% block main %}
+<section class="phero" style="padding-bottom:clamp(28px,4vw,48px)">
+  <div class="hex-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="{{ R }}index.html">Home</a></li><li aria-current="page">Book</li></ol>
+    <h1 class="display h1" data-split>Book your <span class="em">chair.</span></h1>
+    <p class="lede" data-reveal>Choose your pro, pick a service and a time that works for you. We’ll hand you off to your pro’s live calendar to confirm, and it takes about a minute.</p>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap bk" data-booking>
+    <div class="bk__panel">
+      <ol class="bk__steps">
+        {% for s in ['Pro', 'Service', 'Time', 'Details', 'Confirm'] %}<li><button type="button">{{ loop.index }}. {{ s }}</button></li>{% endfor %}
+      </ol>
+      <div class="bk__body">
+        <div class="bk__step">
+          <h2>Who’s in your chair?</h2>
+          <p>All six pros work out of Premier on Hull Street Road.</p>
+          <div class="choices choices--pros" data-pros></div>
+        </div>
+        <div class="bk__step">
+          <h2 data-svc-title>Pick a service</h2>
+          <p>Prices come from your pro’s live menu.</p>
+          <div data-services></div>
+          <div class="bk__nav"><button class="btn btn--ghost btn--sm" type="button" data-back><svg aria-hidden="true"><use href="#i-left"/></svg>Back</button></div>
+        </div>
+        <div class="bk__step">
+          <h2>When works for you?</h2>
+          <p>Pick your preferred day and time. Your pro’s calendar will show exactly what’s open.</p>
+          <div class="days" data-days></div>
+          <div class="times" data-times></div>
+          <div class="bk__nav"><button class="btn btn--ghost btn--sm" type="button" data-back><svg aria-hidden="true"><use href="#i-left"/></svg>Back</button></div>
+        </div>
+        <div class="bk__step">
+          <h2>Almost there</h2>
+          <p>So your pro knows who’s coming.</p>
+          <form data-details novalidate>
+            <div class="fields-2">
+              <div class="field"><label for="bk-name">Your name</label><input id="bk-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="bk-phone">Mobile number</label><input id="bk-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required pattern="[0-9()+\-\s.]{10,}"></div>
+            </div>
+            <div class="field"><label for="bk-notes">Anything we should know? <span class="muted">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Reference photo, hair length, first time, kid-friendly needs…"></textarea></div>
+            <div class="bk__nav">
+              <button class="btn btn--ghost btn--sm" type="button" data-back><svg aria-hidden="true"><use href="#i-left"/></svg>Back</button>
+              <button class="btn" type="submit">Review my booking<svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+          </form>
+        </div>
+        <div class="bk__step">
+          <div class="done">
+            <div class="done__icon"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
+            <h2 data-done-title>Almost in the chair.</h2>
+            <p class="muted" style="max-width:52ch;margin:14px auto 0" data-done-copy></p>
+            <div class="actions">
+              <a class="btn" href="#" target="_blank" rel="noopener" data-handoff><span>Confirm</span><svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+              <button class="btn btn--ghost" type="button" data-copy><svg aria-hidden="true"><use href="#i-copy"/></svg><span>Copy my details</span></button>
+              <a class="btn btn--ghost" href="#" data-sms><svg aria-hidden="true"><use href="#i-msg"/></svg>Text the shop instead</a>
+            </div>
+            <p class="fine">Your time isn’t held until you confirm it on your pro’s booking page. Deposits and cancellation policies are set by each pro.</p>
+            <button class="link" type="button" data-restart style="margin-top:18px">Start over</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="bk__sum">
+      <div class="card" data-summary>
+        <p class="kicker">Your booking</p>
+        <div style="margin-top:12px">
+          <div class="sum-row"><span>Pro</span><b data-s-pro>—</b></div>
+          <div class="sum-row"><span>Service</span><b data-s-svc>—</b></div>
+          <div class="sum-row"><span>When</span><b data-s-when>—</b></div>
+          <div class="sum-row"><span>Duration</span><b data-s-dur>—</b></div>
+        </div>
+        <div class="sum-total"><span class="muted" data-s-where>Pick a pro to begin</span><b data-s-total>$0</b></div>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <p class="kicker">Prefer to call?</p>
+        <p style="margin-top:10px"><a class="link" href="{{ S.phone_href }}">{{ S.phone }}</a></p>
+        <p class="muted" style="margin-top:10px;font-size:.92rem">Walk-ins are welcome, and appointments get priority.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap">
+    <div class="head">{{ m.kicker('', 'Already know your pro?') }}<h2 class="display h3">Go straight to their calendar</h2></div>
+    <div class="direct">
+      {% for p in TEAM %}
+      <a href="{{ p.book_url }}" target="_blank" rel="noopener">{{ m.img(p.avatar_key, '52px', alt='') }}<span><b>{{ p.name }}</b><small>{{ p.platform }} · ★ {{ '%.1f' % p.rating }} ({{ p.reviews }})</small></span></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<script type="application/json" id="booking-data">{{ booking_json | safe }}</script>
+{% endblock %}
+{% block scripts %}<script src="{{ R }}assets/js/book.js?v={{ V }}" defer></script>{% endblock %}

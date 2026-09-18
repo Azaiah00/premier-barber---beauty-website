@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block main %}
+<section class="nf">
+  <div>
+    <img src="{{ R }}assets/brand/premier-badge-ondark.svg" alt="" width="300" height="200" style="width:min(300px,70vw);margin:0 auto 34px">
+    <h1 class="display h1" style="font-size:clamp(3rem,10vw,7rem)">{{ big | safe }}</h1>
+    <p class="lede" style="margin:18px auto 0">{{ copy }}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px">
+      <a class="btn" href="{{ R }}index.html">Back to home<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--ghost" href="{{ R }}book.html">Book a pro</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

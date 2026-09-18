@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as m with context %}
+{% block main %}
+<section class="phero">
+  <div class="hex-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="{{ R }}index.html">Home</a></li><li aria-current="page">Services &amp; prices</li></ol>
+    <h1 class="display h1" data-split>The <span class="em">menu.</span></h1>
+    <p class="lede" data-reveal>Every service, every price, every pro, pulled from their live booking pages. Standard adult cuts run {{ ADULT_RANGE }}. Kids’ cuts start at {{ KIDS_FROM }}. Braids start at {{ BRAIDS_FROM }}. Pick a category, compare the pros, and book straight into their calendar.</p>
+  </div>
+</section>
+<nav class="svc-tabs" aria-label="Service categories">
+  <div class="wrap">{% for c in CATS %}<a href="#{{ c.id }}">{{ c.title }}</a>{% endfor %}</div>
+</nav>
+<div class="wrap">
+  {% for c in CATS %}
+  <section class="cat" id="{{ c.id }}" aria-labelledby="{{ c.id }}-h">
+    <div class="cat__head">
+      <div>
+        <p class="kicker"><span class="num">{{ '%02d' % loop.index }}</span>{{ c.kicker }}</p>
+        <h2 id="{{ c.id }}-h" class="display h2" style="margin-top:14px">{{ c.title }}</h2>
+        <p class="muted" style="margin-top:14px;max-width:40ch">{{ c.blurb }}</p>
+      </div>
+      <div>
+        {% for blk in c.blocks %}
+        <div class="menu-block" data-reveal>
+          <h3 style="font-size:1.3rem"><a href="{{ R }}team/{{ blk.pro.slug }}.html" style="display:inline-flex;align-items:center;gap:12px"><span class="pro__avatar" style="width:40px;height:40px;margin:0">{{ m.img(blk.pro.avatar_key, '40px', alt='') }}</span>{{ blk.pro.name }}</a></h3>
+          {% for s in blk['items'] %}
+          <div class="svc">
+            <h4>{{ s.name }}</h4>
+            <span class="price">{% if s.plus %}<small class="muted" style="font-family:var(--body);font-size:.75rem">from </small>{% endif %}{{ money(s.price) }}</span>
+            <div class="meta"><span><svg aria-hidden="true"><use href="#i-clock"/></svg>{{ s.dur }}</span>{% if s.desc %}<span>{{ s.desc }}</span>{% endif %}</div>
+          </div>
+          {% endfor %}
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+            <a class="btn btn--sm" href="{{ blk.pro.book_url }}" target="_blank" rel="noopener">Book {{ blk.pro.first }} on {{ blk.pro.platform }}<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <a class="btn btn--sm btn--ghost" href="{{ R }}team/{{ blk.pro.slug }}.html">See {{ blk.pro.first }}’s work</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+  <p class="fine" style="padding-bottom:40px">Prices and durations come from each pro’s Booksy, StyleSeat or theCut page as of {{ UPDATED }} and may change. Your booking page always shows the current price, deposit and cancellation policy.</p>
+</div>
+{{ m.cta_band('Know what <span class="em">you</span> want?', 'Book straight into your pro’s calendar, or let our concierge walk you through pro, service and time.') }}
+{% endblock %}

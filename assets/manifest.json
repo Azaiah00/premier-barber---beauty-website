@@ -1,0 +1,1976 @@
+{
+"hero": {
+"files": [
+[
+"hero-480.webp",
+480
+],
+[
+"hero-960.webp",
+960
+],
+[
+"hero-1600.webp",
+1600
+],
+[
+"hero-2200.webp",
+2200
+]
+],
+"w": 2200,
+"h": 1407,
+"alt": "Master Barber Maal giving a client a razor line-up inside the blue-walled Premier Barber & Beauty Salon"
+},
+"hero-portrait": {
+"files": [
+[
+"hero-portrait-480.webp",
+480
+],
+[
+"hero-portrait-960.webp",
+960
+],
+[
+"hero-portrait-1400.webp",
+1400
+]
+],
+"w": 1400,
+"h": 1818,
+"alt": "Master Barber Maal at work inside Premier Barber & Beauty Salon"
+},
+"space-chair": {
+"files": [
+[
+"space-chair-480.webp",
+480
+],
+[
+"space-chair-960.webp",
+960
+],
+[
+"space-chair-1400.webp",
+1400
+]
+],
+"w": 1400,
+"h": 1587,
+"alt": "A black-and-chrome barber chair under ring lights against Premier\u2019s royal-blue wall"
+},
+"space-wide": {
+"files": [
+[
+"space-wide-452.webp",
+452
+]
+],
+"w": 452,
+"h": 338,
+"alt": "Wide view of Premier Barber & Beauty Salon with hexagon LED ceiling lights, stations and a waiting lounge"
+},
+"space-room": {
+"files": [
+[
+"space-room-480.webp",
+480
+],
+[
+"space-room-720.webp",
+720
+]
+],
+"w": 720,
+"h": 720,
+"alt": "A client relaxing in a barber chair between ring lights at Premier"
+},
+"space-sign": {
+"files": [
+[
+"space-sign-480.webp",
+480
+],
+[
+"space-sign-960.webp",
+960
+],
+[
+"space-sign-1400.webp",
+1400
+]
+],
+"w": 1400,
+"h": 896,
+"alt": "The Premier Barber & Beauty sign on the white brick wall of the salon"
+},
+"maal-portrait": {
+"files": [
+[
+"maal-portrait-480.webp",
+480
+],
+[
+"maal-portrait-900.webp",
+900
+]
+],
+"w": 900,
+"h": 900,
+"alt": "Portrait of Master Barber Maal"
+},
+"darnell-portrait": {
+"files": [
+[
+"darnell-portrait-200.webp",
+200
+]
+],
+"w": 200,
+"h": 200,
+"alt": "Darnell Da Barber logo illustration"
+},
+"ryan-portrait": {
+"files": [
+[
+"ryan-portrait-480.webp",
+480
+],
+[
+"ryan-portrait-900.webp",
+900
+]
+],
+"w": 900,
+"h": 899,
+"alt": "Textured crop by Ryan In The Cut"
+},
+"samaya-portrait": {
+"files": [
+[
+"samaya-portrait-480.webp",
+480
+],
+[
+"samaya-portrait-900.webp",
+900
+]
+],
+"w": 900,
+"h": 900,
+"alt": "Red wig install by Hair by Samaya"
+},
+"adonis-portrait": {
+"files": [
+[
+"adonis-portrait-480.webp",
+480
+],
+[
+"adonis-portrait-640.webp",
+640
+]
+],
+"w": 640,
+"h": 636,
+"alt": "Adonis, the Jack of All Fadez, in the Premier shop"
+},
+"saint-portrait": {
+"files": [
+[
+"saint-portrait-480.webp",
+480
+],
+[
+"saint-portrait-900.webp",
+900
+]
+],
+"w": 900,
+"h": 750,
+"alt": "Blessed By Saint chrome logo"
+},
+"samaya-logo": {
+"files": [
+[
+"samaya-logo-292.webp",
+292
+]
+],
+"w": 292,
+"h": 292,
+"alt": "Hair by Samaya logo"
+},
+"saint-logo": {
+"files": [
+[
+"saint-logo-480.webp",
+480
+],
+[
+"saint-logo-900.webp",
+900
+]
+],
+"w": 900,
+"h": 600,
+"alt": "Blessed By Saint chrome logo"
+},
+"adonis-avatar": {
+"files": [
+[
+"adonis-avatar-480.webp",
+480
+],
+[
+"adonis-avatar-581.webp",
+581
+]
+],
+"w": 581,
+"h": 580,
+"alt": "Illustrated portrait of Adonis, The Jack of All Fadez"
+},
+"maal-card": {
+"files": [
+[
+"maal-card-480.webp",
+480
+],
+[
+"maal-card-960.webp",
+960
+],
+[
+"maal-card-1100.webp",
+1100
+]
+],
+"w": 1100,
+"h": 1467,
+"alt": "Curly top with a clean skin fade by Master Barber Maal"
+},
+"darnell-card": {
+"files": [
+[
+"darnell-card-480.webp",
+480
+],
+[
+"darnell-card-960.webp",
+960
+],
+[
+"darnell-card-1100.webp",
+1100
+]
+],
+"w": 1100,
+"h": 1115,
+"alt": "Fresh fade by OG Barber Darnell inside Premier"
+},
+"ryan-card": {
+"files": [
+[
+"ryan-card-480.webp",
+480
+],
+[
+"ryan-card-960.webp",
+960
+],
+[
+"ryan-card-1100.webp",
+1100
+]
+],
+"w": 1100,
+"h": 1100,
+"alt": "Textured modern cut with a taper by Ryan In The Cut"
+},
+"samaya-card": {
+"files": [
+[
+"samaya-card-480.webp",
+480
+],
+[
+"samaya-card-960.webp",
+960
+],
+[
+"samaya-card-1100.webp",
+1100
+]
+],
+"w": 1100,
+"h": 1296,
+"alt": "Long red stitch braids by Hair by Samaya under the Premier sign"
+},
+"adonis-card": {
+"files": [
+[
+"adonis-card-480.webp",
+480
+],
+[
+"adonis-card-960.webp",
+960
+],
+[
+"adonis-card-1100.webp",
+1100
+]
+],
+"w": 1100,
+"h": 1100,
+"alt": "Twists with a sharp taper and line-up by Adonis Tha Barber"
+},
+"saint-card": {
+"files": [
+[
+"saint-card-480.webp",
+480
+],
+[
+"saint-card-960.webp",
+960
+],
+[
+"saint-card-1080.webp",
+1080
+]
+],
+"w": 1080,
+"h": 1382,
+"alt": "Top-knot with a skin fade under blue light by Blessed By Saint"
+},
+"g-maal-02": {
+"files": [
+[
+"g-maal-02-400.webp",
+400
+],
+[
+"g-maal-02-800.webp",
+800
+],
+[
+"g-maal-02-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Low taper with textured top by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-05": {
+"files": [
+[
+"g-maal-05-400.webp",
+400
+],
+[
+"g-maal-05-800.webp",
+800
+],
+[
+"g-maal-05-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Copper textured crop with a burst fade by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-06": {
+"files": [
+[
+"g-maal-06-400.webp",
+400
+],
+[
+"g-maal-06-800.webp",
+800
+],
+[
+"g-maal-06-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Textured fringe with a low taper by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-07": {
+"files": [
+[
+"g-maal-07-400.webp",
+400
+],
+[
+"g-maal-07-800.webp",
+800
+],
+[
+"g-maal-07-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Teen taper with a sharp line-up by Master Barber Maal",
+"pro": "maal",
+"cat": "kids"
+},
+"g-maal-10": {
+"files": [
+[
+"g-maal-10-400.webp",
+400
+],
+[
+"g-maal-10-800.webp",
+800
+],
+[
+"g-maal-10-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Curly high top with a mid fade by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-11": {
+"files": [
+[
+"g-maal-11-400.webp",
+400
+],
+[
+"g-maal-11-800.webp",
+800
+],
+[
+"g-maal-11-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Clean waves with a crisp line-up by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-12": {
+"files": [
+[
+"g-maal-12-400.webp",
+400
+],
+[
+"g-maal-12-800.webp",
+800
+],
+[
+"g-maal-12-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Kids fade with a textured top by Master Barber Maal",
+"pro": "maal",
+"cat": "kids"
+},
+"g-maal-15": {
+"files": [
+[
+"g-maal-15-400.webp",
+400
+],
+[
+"g-maal-15-800.webp",
+800
+],
+[
+"g-maal-15-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Curly top with a taper by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-17": {
+"files": [
+[
+"g-maal-17-400.webp",
+400
+],
+[
+"g-maal-17-800.webp",
+800
+],
+[
+"g-maal-17-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Sharp line-up and beard by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-18": {
+"files": [
+[
+"g-maal-18-400.webp",
+400
+],
+[
+"g-maal-18-800.webp",
+800
+],
+[
+"g-maal-18-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Kids scissor cut by Master Barber Maal",
+"pro": "maal",
+"cat": "kids"
+},
+"g-maal-19": {
+"files": [
+[
+"g-maal-19-400.webp",
+400
+],
+[
+"g-maal-19-800.webp",
+800
+],
+[
+"g-maal-19-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Curly top with a skin fade by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-22": {
+"files": [
+[
+"g-maal-22-400.webp",
+400
+],
+[
+"g-maal-22-800.webp",
+800
+],
+[
+"g-maal-22-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Short natural cut with a taper by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-24": {
+"files": [
+[
+"g-maal-24-400.webp",
+400
+],
+[
+"g-maal-24-800.webp",
+800
+],
+[
+"g-maal-24-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Skin fade with a textured top and full beard by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-25": {
+"files": [
+[
+"g-maal-25-400.webp",
+400
+],
+[
+"g-maal-25-800.webp",
+800
+],
+[
+"g-maal-25-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Modern mullet with a skin fade by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-30": {
+"files": [
+[
+"g-maal-30-400.webp",
+400
+],
+[
+"g-maal-30-800.webp",
+800
+],
+[
+"g-maal-30-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Textured scissor cut by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-33": {
+"files": [
+[
+"g-maal-33-400.webp",
+400
+],
+[
+"g-maal-33-800.webp",
+800
+],
+[
+"g-maal-33-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Scissor-cut fringe by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-maal-34": {
+"files": [
+[
+"g-maal-34-400.webp",
+400
+],
+[
+"g-maal-34-800.webp",
+800
+],
+[
+"g-maal-34-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Textured scissor cut with a taper by Master Barber Maal",
+"pro": "maal",
+"cat": "barber"
+},
+"g-ryan-01": {
+"files": [
+[
+"g-ryan-01-400.webp",
+400
+],
+[
+"g-ryan-01-800.webp",
+800
+],
+[
+"g-ryan-01-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Curly textured crop with a taper by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-03": {
+"files": [
+[
+"g-ryan-03-400.webp",
+400
+],
+[
+"g-ryan-03-800.webp",
+800
+],
+[
+"g-ryan-03-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Curly fringe with a low taper by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-04": {
+"files": [
+[
+"g-ryan-04-400.webp",
+400
+],
+[
+"g-ryan-04-800.webp",
+800
+],
+[
+"g-ryan-04-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Waves with a line-up and beard by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-05": {
+"files": [
+[
+"g-ryan-05-400.webp",
+400
+],
+[
+"g-ryan-05-800.webp",
+800
+],
+[
+"g-ryan-05-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Curly crop with a burst fade by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-08": {
+"files": [
+[
+"g-ryan-08-400.webp",
+400
+],
+[
+"g-ryan-08-800.webp",
+800
+],
+[
+"g-ryan-08-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Curly fringe with a mid taper by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-10": {
+"files": [
+[
+"g-ryan-10-400.webp",
+400
+],
+[
+"g-ryan-10-800.webp",
+800
+],
+[
+"g-ryan-10-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Curly top with a low fade by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-12": {
+"files": [
+[
+"g-ryan-12-400.webp",
+400
+],
+[
+"g-ryan-12-800.webp",
+800
+],
+[
+"g-ryan-12-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Textured crop by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-16": {
+"files": [
+[
+"g-ryan-16-400.webp",
+400
+],
+[
+"g-ryan-16-800.webp",
+800
+],
+[
+"g-ryan-16-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Curly high top with a fade and beard by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-17": {
+"files": [
+[
+"g-ryan-17-400.webp",
+400
+],
+[
+"g-ryan-17-800.webp",
+800
+],
+[
+"g-ryan-17-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Curly crop with a taper by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-20": {
+"files": [
+[
+"g-ryan-20-400.webp",
+400
+],
+[
+"g-ryan-20-800.webp",
+800
+],
+[
+"g-ryan-20-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Curly top with a fade and beard by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-23": {
+"files": [
+[
+"g-ryan-23-400.webp",
+400
+],
+[
+"g-ryan-23-800.webp",
+800
+],
+[
+"g-ryan-23-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Textured modern cut with a taper by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-32": {
+"files": [
+[
+"g-ryan-32-400.webp",
+400
+],
+[
+"g-ryan-32-800.webp",
+800
+],
+[
+"g-ryan-32-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Curly modern mullet by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-ryan-39": {
+"files": [
+[
+"g-ryan-39-400.webp",
+400
+],
+[
+"g-ryan-39-800.webp",
+800
+],
+[
+"g-ryan-39-1179.webp",
+1179
+]
+],
+"w": 1179,
+"h": 1179,
+"alt": "Wavy fringe with a taper by Ryan In The Cut",
+"pro": "ryan",
+"cat": "barber"
+},
+"g-adonis-02": {
+"files": [
+[
+"g-adonis-02-400.webp",
+400
+],
+[
+"g-adonis-02-800.webp",
+800
+],
+[
+"g-adonis-02-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Fresh taper with a silver beard by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-03": {
+"files": [
+[
+"g-adonis-03-400.webp",
+400
+],
+[
+"g-adonis-03-800.webp",
+800
+],
+[
+"g-adonis-03-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Afro with a sharp beard line-up by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-05": {
+"files": [
+[
+"g-adonis-05-400.webp",
+400
+],
+[
+"g-adonis-05-800.webp",
+800
+],
+[
+"g-adonis-05-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Curly top with a fade by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-07": {
+"files": [
+[
+"g-adonis-07-400.webp",
+400
+],
+[
+"g-adonis-07-800.webp",
+800
+],
+[
+"g-adonis-07-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Textured fringe by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-09": {
+"files": [
+[
+"g-adonis-09-400.webp",
+400
+],
+[
+"g-adonis-09-800.webp",
+800
+],
+[
+"g-adonis-09-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Low fade with a full beard by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-10": {
+"files": [
+[
+"g-adonis-10-400.webp",
+400
+],
+[
+"g-adonis-10-800.webp",
+800
+],
+[
+"g-adonis-10-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Waves with a sharp beard line-up by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-15": {
+"files": [
+[
+"g-adonis-15-400.webp",
+400
+],
+[
+"g-adonis-15-800.webp",
+800
+],
+[
+"g-adonis-15-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Top knot with a skin fade by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-17": {
+"files": [
+[
+"g-adonis-17-400.webp",
+400
+],
+[
+"g-adonis-17-800.webp",
+800
+],
+[
+"g-adonis-17-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Locs with a clean taper by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-18": {
+"files": [
+[
+"g-adonis-18-400.webp",
+400
+],
+[
+"g-adonis-18-800.webp",
+800
+],
+[
+"g-adonis-18-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Twists with a taper by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-21": {
+"files": [
+[
+"g-adonis-21-400.webp",
+400
+],
+[
+"g-adonis-21-800.webp",
+800
+],
+[
+"g-adonis-21-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Kids cut with a part design by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "kids"
+},
+"g-adonis-32": {
+"files": [
+[
+"g-adonis-32-400.webp",
+400
+],
+[
+"g-adonis-32-800.webp",
+800
+],
+[
+"g-adonis-32-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Kids fade by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "kids"
+},
+"g-adonis-34": {
+"files": [
+[
+"g-adonis-34-400.webp",
+400
+],
+[
+"g-adonis-34-800.webp",
+800
+],
+[
+"g-adonis-34-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Platinum women\u2019s cut with designs by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-42": {
+"files": [
+[
+"g-adonis-42-400.webp",
+400
+],
+[
+"g-adonis-42-800.webp",
+800
+],
+[
+"g-adonis-42-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Twists with a taper by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-46": {
+"files": [
+[
+"g-adonis-46-400.webp",
+400
+],
+[
+"g-adonis-46-800.webp",
+800
+],
+[
+"g-adonis-46-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Kids top knot with a design by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "kids"
+},
+"g-adonis-47": {
+"files": [
+[
+"g-adonis-47-400.webp",
+400
+],
+[
+"g-adonis-47-800.webp",
+800
+],
+[
+"g-adonis-47-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Kids top knot with a fade by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "kids"
+},
+"g-adonis-48": {
+"files": [
+[
+"g-adonis-48-400.webp",
+400
+],
+[
+"g-adonis-48-800.webp",
+800
+],
+[
+"g-adonis-48-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Curly top with a taper by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-53": {
+"files": [
+[
+"g-adonis-53-400.webp",
+400
+],
+[
+"g-adonis-53-800.webp",
+800
+],
+[
+"g-adonis-53-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Kids fringe with a skin fade by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "kids"
+},
+"g-adonis-56": {
+"files": [
+[
+"g-adonis-56-400.webp",
+400
+],
+[
+"g-adonis-56-800.webp",
+800
+],
+[
+"g-adonis-56-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Curly afro with a taper by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-adonis-58": {
+"files": [
+[
+"g-adonis-58-400.webp",
+400
+],
+[
+"g-adonis-58-800.webp",
+800
+],
+[
+"g-adonis-58-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1200,
+"alt": "Afro with a beard fade by Adonis Tha Barber",
+"pro": "adonis",
+"cat": "barber"
+},
+"g-samaya-03": {
+"files": [
+[
+"g-samaya-03-400.webp",
+400
+],
+[
+"g-samaya-03-800.webp",
+800
+],
+[
+"g-samaya-03-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Sleek wig install by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-04": {
+"files": [
+[
+"g-samaya-04-400.webp",
+400
+],
+[
+"g-samaya-04-800.webp",
+800
+],
+[
+"g-samaya-04-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Red straight wig install by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-05": {
+"files": [
+[
+"g-samaya-05-400.webp",
+400
+],
+[
+"g-samaya-05-720.webp",
+720
+]
+],
+"w": 720,
+"h": 900,
+"alt": "Stitch braids with a heart design by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-06": {
+"files": [
+[
+"g-samaya-06-400.webp",
+400
+],
+[
+"g-samaya-06-800.webp",
+800
+],
+[
+"g-samaya-06-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1500,
+"alt": "Feed-in braids by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-07": {
+"files": [
+[
+"g-samaya-07-400.webp",
+400
+],
+[
+"g-samaya-07-720.webp",
+720
+]
+],
+"w": 720,
+"h": 900,
+"alt": "Stitch braids by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-08": {
+"files": [
+[
+"g-samaya-08-400.webp",
+400
+],
+[
+"g-samaya-08-720.webp",
+720
+]
+],
+"w": 720,
+"h": 900,
+"alt": "Body-wave wig install by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-11": {
+"files": [
+[
+"g-samaya-11-400.webp",
+400
+],
+[
+"g-samaya-11-720.webp",
+720
+]
+],
+"w": 720,
+"h": 900,
+"alt": "Long straight wig install by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-12": {
+"files": [
+[
+"g-samaya-12-400.webp",
+400
+],
+[
+"g-samaya-12-720.webp",
+720
+]
+],
+"w": 720,
+"h": 900,
+"alt": "Deep-wave wig install by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-13": {
+"files": [
+[
+"g-samaya-13-400.webp",
+400
+],
+[
+"g-samaya-13-800.webp",
+800
+],
+[
+"g-samaya-13-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1600,
+"alt": "Men\u2019s stitch braids by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-14": {
+"files": [
+[
+"g-samaya-14-400.webp",
+400
+],
+[
+"g-samaya-14-800.webp",
+800
+],
+[
+"g-samaya-14-1080.webp",
+1080
+]
+],
+"w": 1080,
+"h": 1350,
+"alt": "Boho knotless braids by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-15": {
+"files": [
+[
+"g-samaya-15-400.webp",
+400
+],
+[
+"g-samaya-15-720.webp",
+720
+]
+],
+"w": 720,
+"h": 900,
+"alt": "Fulani braids by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-17": {
+"files": [
+[
+"g-samaya-17-400.webp",
+400
+],
+[
+"g-samaya-17-800.webp",
+800
+],
+[
+"g-samaya-17-1080.webp",
+1080
+]
+],
+"w": 1080,
+"h": 1350,
+"alt": "Men\u2019s braids with a design by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-18": {
+"files": [
+[
+"g-samaya-18-400.webp",
+400
+],
+[
+"g-samaya-18-800.webp",
+800
+],
+[
+"g-samaya-18-1080.webp",
+1080
+]
+],
+"w": 1080,
+"h": 1350,
+"alt": "Sleek ginger ponytail by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-19": {
+"files": [
+[
+"g-samaya-19-400.webp",
+400
+],
+[
+"g-samaya-19-800.webp",
+800
+],
+[
+"g-samaya-19-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1501,
+"alt": "Honey-blonde wig install by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-21": {
+"files": [
+[
+"g-samaya-21-400.webp",
+400
+],
+[
+"g-samaya-21-720.webp",
+720
+]
+],
+"w": 720,
+"h": 900,
+"alt": "Side-part wig install by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-samaya-22": {
+"files": [
+[
+"g-samaya-22-400.webp",
+400
+],
+[
+"g-samaya-22-800.webp",
+800
+],
+[
+"g-samaya-22-1200.webp",
+1200
+]
+],
+"w": 1200,
+"h": 1536,
+"alt": "Long red stitch braids by Hair by Samaya",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-ig-04": {
+"files": [
+[
+"g-ig-04-400.webp",
+400
+],
+[
+"g-ig-04-640.webp",
+640
+]
+],
+"w": 640,
+"h": 1136,
+"alt": "Pink body-wave wig install at Premier Barber & Beauty",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-ig-09": {
+"files": [
+[
+"g-ig-09-400.webp",
+400
+],
+[
+"g-ig-09-720.webp",
+720
+]
+],
+"w": 720,
+"h": 960,
+"alt": "Orange wig with a braided halo at Premier Barber & Beauty",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-ig-28": {
+"files": [
+[
+"g-ig-28-400.webp",
+400
+],
+[
+"g-ig-28-640.webp",
+640
+]
+],
+"w": 640,
+"h": 1136,
+"alt": "Red wig install at Premier Barber & Beauty",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-ig-35": {
+"files": [
+[
+"g-ig-35-400.webp",
+400
+],
+[
+"g-ig-35-720.webp",
+720
+]
+],
+"w": 720,
+"h": 1280,
+"alt": "Sleek pigtails with bows at Premier Barber & Beauty",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-ig-37": {
+"files": [
+[
+"g-ig-37-400.webp",
+400
+],
+[
+"g-ig-37-720.webp",
+720
+]
+],
+"w": 720,
+"h": 1280,
+"alt": "Deep-wave wig with a side part at Premier Barber & Beauty",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-ig-39": {
+"files": [
+[
+"g-ig-39-400.webp",
+400
+],
+[
+"g-ig-39-720.webp",
+720
+]
+],
+"w": 720,
+"h": 808,
+"alt": "Long knotless braids at Premier Barber & Beauty",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-ig-40": {
+"files": [
+[
+"g-ig-40-400.webp",
+400
+],
+[
+"g-ig-40-720.webp",
+720
+]
+],
+"w": 720,
+"h": 900,
+"alt": "Boho Fulani braids at Premier Barber & Beauty",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-ig-44": {
+"files": [
+[
+"g-ig-44-400.webp",
+400
+],
+[
+"g-ig-44-720.webp",
+720
+]
+],
+"w": 720,
+"h": 1280,
+"alt": "Boho knotless braids at Premier Barber & Beauty",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-ig-20": {
+"files": [
+[
+"g-ig-20-400.webp",
+400
+],
+[
+"g-ig-20-720.webp",
+720
+]
+],
+"w": 720,
+"h": 960,
+"alt": "Crimped wig install at Premier Barber & Beauty",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-ig-24": {
+"files": [
+[
+"g-ig-24-400.webp",
+400
+],
+[
+"g-ig-24-720.webp",
+720
+]
+],
+"w": 720,
+"h": 960,
+"alt": "Honey-blonde wig install at Premier Barber & Beauty",
+"pro": "samaya",
+"cat": "beauty"
+},
+"g-saint-03": {
+"files": [
+[
+"g-saint-03-400.webp",
+400
+],
+[
+"g-saint-03-800.webp",
+800
+],
+[
+"g-saint-03-1080.webp",
+1080
+]
+],
+"w": 1080,
+"h": 1920,
+"alt": "Curly top with a bald fade by Blessed By Saint",
+"pro": "saint",
+"cat": "barber"
+},
+"g-saint-04": {
+"files": [
+[
+"g-saint-04-400.webp",
+400
+],
+[
+"g-saint-04-800.webp",
+800
+],
+[
+"g-saint-04-1080.webp",
+1080
+]
+],
+"w": 1080,
+"h": 1920,
+"alt": "Top knot with a skin fade by Blessed By Saint",
+"pro": "saint",
+"cat": "barber"
+},
+"g-darnell-05": {
+"files": [
+[
+"g-darnell-05-300.webp",
+300
+]
+],
+"w": 300,
+"h": 300,
+"alt": "Beard line-up and fade by OG Barber Darnell",
+"pro": "darnell",
+"cat": "barber"
+},
+"g-darnell-07": {
+"files": [
+[
+"g-darnell-07-300.webp",
+300
+]
+],
+"w": 300,
+"h": 300,
+"alt": "High-top fade with a razor part by OG Barber Darnell",
+"pro": "darnell",
+"cat": "barber"
+},
+"g-darnell-12": {
+"files": [
+[
+"g-darnell-12-300.webp",
+300
+]
+],
+"w": 300,
+"h": 300,
+"alt": "Fade with beard by OG Barber Darnell",
+"pro": "darnell",
+"cat": "barber"
+},
+"g-darnell-17": {
+"files": [
+[
+"g-darnell-17-300.webp",
+300
+]
+],
+"w": 300,
+"h": 300,
+"alt": "Braids with a sharp line-up by OG Barber Darnell",
+"pro": "darnell",
+"cat": "barber"
+},
+"g-darnell-20": {
+"files": [
+[
+"g-darnell-20-300.webp",
+300
+]
+],
+"w": 300,
+"h": 300,
+"alt": "Waves with a part design by OG Barber Darnell",
+"pro": "darnell",
+"cat": "barber"
+},
+"g-darnell-23": {
+"files": [
+[
+"g-darnell-23-300.webp",
+300
+]
+],
+"w": 300,
+"h": 300,
+"alt": "Kids cut with a freehand design by OG Barber Darnell",
+"pro": "darnell",
+"cat": "kids"
+}
+}

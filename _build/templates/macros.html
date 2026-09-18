@@ -1,0 +1,62 @@
+{% macro img(key, sizes='100vw', cls='', eager=False, alt=None, extra='') -%}
+{%- set m = M[key] -%}
+<img{% if cls %} class="{{ cls }}"{% endif %} src="{{ R }}assets/img/{{ m.files[-1][0] if m.files|length < 3 else m.files[1][0] }}" srcset="{% for f, w in m.files %}{{ R }}assets/img/{{ f }} {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="{{ sizes }}" width="{{ m.w }}" height="{{ m.h }}" alt="{{ m.alt if alt is none else alt }}"{% if eager %} fetchpriority="high" decoding="async"{% else %} loading="lazy" decoding="async"{% endif %}{{ extra | safe }}>
+{%- endmacro %}
+
+{% macro stars(n=5) -%}<span class="stars" aria-hidden="true">{% for i in range(n) %}<svg><use href="#i-star"/></svg>{% endfor %}</span>{%- endmacro %}
+
+{% macro pro_card(p) -%}
+<article class="pro" data-kind="{{ p.kind }}">
+  <a class="pro__hit" href="{{ R }}team/{{ p.slug }}.html" aria-label="Meet {{ p.name }}"></a>
+  <div class="pro__img">{{ img(p.card, '(max-width:600px) 82vw, 420px') }}</div>
+  <div class="pro__tag">
+    <span class="pill"><svg aria-hidden="true"><use href="#i-star"/></svg>{{ '%.1f' % p.rating }} · {{ p.reviews }}</span>
+    <span class="pill">{{ p.platform }}</span>
+  </div>
+  <div class="pro__body">
+    <div class="pro__avatar">{{ img(p.avatar_key, '58px', alt='') }}</div>
+    <h3 class="pro__name">{{ p.name }}</h3>
+    <p class="pro__role">{{ p.role }}</p>
+    <div class="pro__actions">
+      <a class="btn btn--sm" href="{{ p.book_url }}" target="_blank" rel="noopener" data-track="book-{{ p.slug }}">Book {{ p.first }}<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+      <a class="btn btn--sm btn--ghost" href="{{ R }}team/{{ p.slug }}.html">Profile</a>
+    </div>
+  </div>
+</article>
+{%- endmacro %}
+
+{% macro kicker(num, text) -%}<p class="kicker"><span class="num">{{ num }}</span>{{ text }}</p>{%- endmacro %}
+
+{% macro visit_block() -%}
+<div class="visit">
+  <div class="card" data-reveal>
+    <p class="chip" data-open-status><span class="dot"></span><span class="txt">Hours below</span></p>
+    <div class="info-row" style="margin-top:14px"><svg aria-hidden="true"><use href="#i-pin"/></svg><div><h3>Address</h3><a href="{{ S.maps_url }}" target="_blank" rel="noopener">{{ S.street }}<br>{{ S.city }}, {{ S.region }} {{ S.zip }}</a></div></div>
+    <div class="info-row"><svg aria-hidden="true"><use href="#i-phone"/></svg><div><h3>Call or text</h3><a href="{{ S.phone_href }}">{{ S.phone }}</a></div></div>
+    <div class="info-row"><svg aria-hidden="true"><use href="#i-clock"/></svg><div style="flex:1"><h3>Shop hours</h3>
+      <table class="hours"><tbody>
+      {% for d, o, c in S.hours %}<tr data-day="{{ d }}"><td>{{ d }}</td><td>{% if o %}{{ fmt(o) }} – {{ fmt(c) }}{% else %}Closed{% endif %}</td></tr>{% endfor %}
+      </tbody></table>
+      <p class="muted" style="font-size:.86rem;margin-top:10px">Each pro keeps their own book. Some take early, late or Sunday appointments, so check live availability when you book.</p>
+    </div></div>
+  </div>
+  <div class="map" data-reveal>
+    <iframe title="Map to Premier Barber & Beauty Salon, 11800-G Hull Street Road, Midlothian VA" src="{{ S.maps_embed }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    <div class="map__pin"><div><b>Premier Barber &amp; Beauty</b><span>Hull Street Rd · Midlothian, VA</span></div><a class="btn btn--sm" href="{{ S.maps_url }}" target="_blank" rel="noopener">Directions<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</div>
+{%- endmacro %}
+
+{% macro cta_band(title_html, copy, primary=('book.html', 'Book your chair'), secondary=None) -%}
+<section class="section--tight"><div class="wrap">
+  <div class="cta" data-reveal="scale">
+    <div class="hex-bg" aria-hidden="true"></div>
+    <h2 class="display h2" data-split>{{ title_html | safe }}</h2>
+    <p>{{ copy }}</p>
+    <div class="actions">
+      <a class="btn btn--white" href="{{ R }}{{ primary[0] }}">{{ primary[1] }}<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      {% if secondary %}<a class="btn btn--ghost" href="{{ secondary[0] }}">{{ secondary[1] }}</a>{% else %}<a class="btn btn--ghost" href="{{ S.phone_href }}"><svg aria-hidden="true"><use href="#i-phone"/></svg>{{ S.phone }}</a>{% endif %}
+    </div>
+  </div>
+</div></section>
+{%- endmacro %}

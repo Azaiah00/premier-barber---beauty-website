@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as m with context %}
+{% block main %}
+<section class="phero">
+  <div class="hex-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="{{ R }}index.html">Home</a></li><li><a href="{{ R }}team.html">Team</a></li><li aria-current="page">{{ p.name }}</li></ol>
+    <div class="pro-hero" style="margin-top:28px">
+      <div>
+        <p class="kicker">{{ p.role }}</p>
+        <h1 class="display h1" style="font-size:clamp(3rem,8.6vw,7.4rem)" data-split>{{ p.name }}</h1>
+        <p class="lede" style="margin-top:22px" data-reveal>{{ p.headline }}</p>
+        <div class="pro-facts" data-reveal>
+          <span class="chip">{{ m.stars() }}<b>{{ '%.1f' % p.rating }}</b>&nbsp;· {{ p.reviews }} reviews on {{ p.platform }}</span>
+          {% if p.experience %}<span class="chip"><svg aria-hidden="true"><use href="#i-clock"/></svg>{{ p.experience }} experience</span>{% endif %}
+          <span class="chip"><svg aria-hidden="true"><use href="#i-pin"/></svg>Premier · Midlothian</span>
+        </div>
+        <ul class="specs" data-reveal>{% for s in p.specialties %}<li>{{ s }}</li>{% endfor %}</ul>
+        <div class="hero__actions" data-reveal>
+          <a class="btn" href="{{ p.book_url }}" target="_blank" rel="noopener">Book {{ p.first }} on {{ p.platform }}<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+          {% if p.instagram %}<a class="btn btn--ghost" href="{{ p.instagram }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>{{ p.ig_handle }}</a>{% endif %}
+        </div>
+      </div>
+      <div class="pro-hero__media clip-reveal">
+        {{ m.img(p.card, '(max-width:900px) 100vw, 50vw', eager=True) }}
+        <div class="pro__avatar">{{ m.img(p.avatar_key, '84px', alt='') }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap pro-layout">
+    <div>
+      {{ m.kicker('01', 'About ' ~ p.first) }}
+      <div class="bio" data-reveal>{% for para in p.bio %}<p>{{ para }}</p>{% endfor %}</div>
+
+      <div id="menu" style="margin-top:clamp(48px,6vw,80px)">
+        {{ m.kicker('02', p.first ~ '’s menu') }}
+        <h2 class="display h3" style="margin:14px 0 30px">Services &amp; prices</h2>
+        {% for grp in p.menu2 %}
+        <div class="menu-block" data-reveal>
+          <h3>{{ grp.title }}</h3>
+          {% for s in grp['items'] %}
+          <div class="svc">
+            <h4>{{ s.name }}</h4>
+            <span class="price">{% if s.plus %}<small class="muted" style="font-family:var(--body);font-size:.75rem">from </small>{% endif %}{{ money(s.price) }}</span>
+            <div class="meta"><span><svg aria-hidden="true"><use href="#i-clock"/></svg>{{ s.dur }}</span>{% if s.desc %}<span>{{ s.desc }}</span>{% endif %}</div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+        {% if p.policy %}<p class="note"><svg aria-hidden="true"><use href="#i-info"/></svg><span>{{ p.policy }}</span></p>{% endif %}
+        <p class="fine">Prices and times come from {{ p.first }}’s {{ p.platform }} page and can change. Your booking page always shows the current price.</p>
+      </div>
+    </div>
+
+    <aside class="sticky-book">
+      <div class="card">
+        <p class="plat"><svg width="18" height="18" aria-hidden="true"><use href="#i-cal"/></svg><span>Books on <b>{{ p.platform }}</b></span></p>
+        <p class="display h3">Book {{ p.first }}</p>
+        <p class="muted">{{ p.hours_note }}</p>
+        <a class="btn btn--block" href="{{ p.book_url }}" target="_blank" rel="noopener">Open {{ p.first }}’s calendar<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+        <a class="btn btn--ghost btn--block" href="{{ R }}book.html?pro={{ p.slug }}">Plan it with our concierge</a>
+        <a class="btn btn--ghost btn--block" href="{{ S.phone_href }}"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call the shop</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+{% if work %}
+<section class="section--tight">
+  <div class="wrap">
+    <div class="head head--split">
+      <div>{{ m.kicker('03', 'The work') }}<h2 class="display h2" style="margin-top:14px" data-split>From {{ p.first }}’s <span class="em">chair.</span></h2></div>
+      <p class="lede" data-reveal>Tap any photo to see it up close.</p>
+    </div>
+    <div class="masonry">
+      {% for k in work %}{% set g = M[k] %}
+      <button type="button" class="tile" data-pro="{{ g.pro }}" data-cat="{{ g.cat }}" data-full="{{ R }}assets/img/{{ g.files[-1][0] }}" data-book="{{ p.book_url }}" data-proname="{{ p.first }}" aria-label="View larger: {{ g.alt }}">
+        {{ m.img(k, '(max-width:600px) 50vw, 25vw') }}
+      </button>{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section--tight">
+  <div class="wrap">
+    <div class="head">{{ m.kicker('04', 'Client love') }}<h2 class="display h2" data-split>What clients <span class="em">say.</span></h2></div>
+    <div class="quotes">
+      {% for who, text in p.quotes %}
+      <figure class="quote" data-reveal><blockquote>{{ text }}</blockquote><figcaption><span><b>{{ who }}</b> · verified client</span><span>{{ p.platform }}</span></figcaption></figure>
+      {% endfor %}
+    </div>
+    <a class="link" href="{{ p.profile_url }}" target="_blank" rel="noopener">Read all {{ p.reviews }} reviews on {{ p.platform }}<svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="wrap">
+    <div class="head">{{ m.kicker('05', 'Also at Premier') }}<h2 class="display h3">More of the team</h2></div>
+    <div class="direct">
+      {% for o in TEAM if o.slug != p.slug %}
+      <a href="{{ R }}team/{{ o.slug }}.html">{{ m.img(o.avatar_key, '52px', alt='') }}<span><b>{{ o.name }}</b><small>{{ o.role }}</small></span></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ m.cta_band('Ready for <span class="em">' ~ p.first ~ '</span>?', p.first ~ ' books on ' ~ p.platform ~ '. Tap below to see live times and lock in your appointment.', primary=('book.html?pro=' ~ p.slug, 'Plan my appointment'), secondary=(p.book_url, 'Open ' ~ p.platform)) }}
+
+<div class="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+  <div class="lb__top"><span class="lb__count"></span><button class="lb__close" type="button" aria-label="Close"><svg><use href="#i-close"/></svg></button></div>
+  <div class="lb__stage"><button class="lb__nav lb__prev" type="button" aria-label="Previous photo"><svg><use href="#i-left"/></svg></button><img src="data:," alt=""><button class="lb__nav lb__next" type="button" aria-label="Next photo"><svg><use href="#i-right"/></svg></button></div>
+  <div class="lb__bar"><p class="lb__cap"></p><a class="btn btn--sm lb__book" href="#" target="_blank" rel="noopener"><span>Book</span><svg aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+</div>
+{% endblock %}

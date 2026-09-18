@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as m with context %}
+{% block main %}
+<section class="phero">
+  <div class="hex-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="{{ R }}index.html">Home</a></li><li aria-current="page">About</li></ol>
+    <h1 class="display h1" data-split>More than <span class="em">a</span> cut.</h1>
+    <p class="lede" data-reveal>Premier Barber &amp; Beauty Salon is a home base for independent barbers and stylists in Midlothian, where precision barbering and beauty work share one address, one standard and one community.</p>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap story">
+    <figure class="clip-reveal">{{ m.img('hero-portrait', '(max-width:900px) 100vw, 45vw') }}</figure>
+    <div>
+      {{ m.kicker('01', 'Our story') }}
+      <h2 class="display h2" style="margin-top:14px" data-split>Built by <span class="em">the</span> chair.</h2>
+      <div class="bio" data-reveal>
+        <p>Most shops make you choose: the barbershop for your line-up, a salon across town for braids, and somewhere else again for the kids. Premier was built so you don’t have to. Under one roof on Hull Street Road you’ll find master barbers with decades of combined experience next to a braid-and-wig specialist whose clients say nobody else can touch their hair.</p>
+        <p>Every pro here runs their own business: their own book, their own style, their own regulars. The standard is shared. The chair is clean, your time is respected, the cut is checked from every angle, and the conversation is good.</p>
+        <p>Clients range from two-year-olds getting their first cut to 65-and-up regulars. You’ll find parents of kids on the autism spectrum who finally found a barber with patience, and professionals who haven’t trusted anyone else in years. That mix is what the shop is about.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <blockquote class="bigquote" data-reveal>“I’ve worked beside a lot of great barbers in Brooklyn, and now I’m working in Richmond beside some more great barbers.”<cite>Darnell, OG barber, 28 years in the chair</cite></blockquote>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">{{ m.kicker('02', 'What we stand on') }}<h2 class="display h2" data-split>The <span class="em">Premier</span> way.</h2></div>
+    <div class="grid values">
+      {% for icon, t, d in [
+        ('razor', 'Precision first', 'Every blend is checked, every line is finished with the razor, and nobody leaves until it’s right.'),
+        ('heart', 'Patience for every head', 'Toddlers, teens, seniors and sensory-sensitive kids all get the same time and care.'),
+        ('sparkle', 'Barber and beauty, together', 'Fades and braids under one roof, so the whole family books in one place.')] %}
+      <article class="pillar" data-reveal><div class="pillar__icon"><svg aria-hidden="true"><use href="#i-{{ icon }}"/></svg></div><h3>{{ t }}</h3><p>{{ d }}</p></article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap space">
+    <div class="space__imgs">
+      <figure class="clip-reveal">{{ m.img('space-chair', '(max-width:900px) 60vw, 34vw') }}</figure>
+      <figure class="clip-reveal">{{ m.img('space-wide', '(max-width:900px) 40vw, 22vw') }}</figure>
+      <figure class="clip-reveal">{{ m.img('space-room', '(max-width:900px) 40vw, 22vw') }}</figure>
+    </div>
+    <div>
+      {{ m.kicker('03', 'The shop') }}
+      <h2 class="display h2" style="margin-top:14px" data-split>Hexagon <span class="em">lights.</span> Blue walls.</h2>
+      <p class="lede" style="margin-top:22px" data-reveal>A bright, modern shop with LED hexagon ceilings, royal-blue walls, leather chairs, a pool table and a lounge. Clients describe it as clean, relaxing and full of good vibes, with easy parking right outside.</p>
+      <a class="btn" href="{{ R }}contact.html" style="margin-top:28px">Get directions<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight" id="join">
+  <div class="wrap">
+    <div class="card join" data-reveal style="padding:clamp(28px,5vw,64px)">
+      <div>
+        {{ m.kicker('04', 'Join the team') }}
+        <h2 class="display h2" style="margin-top:14px">Your chair is <span class="em">waiting.</span></h2>
+        <p class="lede" style="margin-top:18px">We periodically open booths for motivated, high-spirited barbers, stylists, locticians and braiders who want a busy, professional home base in Midlothian.</p>
+      </div>
+      <div style="display:grid;gap:12px">
+        <a class="btn btn--block" href="{{ S.sms_href }}"><svg aria-hidden="true"><use href="#i-msg"/></svg>Text {{ S.phone }}</a>
+        <a class="btn btn--ghost btn--block" href="{{ S.instagram }}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>DM @rvapremier</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ m.cta_band('Come see <span class="em">for</span> yourself.', 'Book with any of our pros, or just walk in. We’ll take it from there.') }}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as m with context %}
+{% block main %}
+<section class="phero">
+  <div class="hex-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <ol class="crumbs"><li><a href="{{ R }}index.html">Home</a></li><li aria-current="page">Gallery</li></ol>
+    <h1 class="display h1" data-split>The <span class="em">lookbook.</span></h1>
+    <p class="lede" data-reveal>{{ GALLERY|length }} looks from our pros’ own books: fades, tapers, designs, braids and wig installs, all done here on Hull Street Road. See one you like? Tap it and book that pro.</p>
+  </div>
+</section>
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter photos">
+      <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter" type="button" data-filter="barber" aria-pressed="false">Cuts &amp; fades</button>
+      <button class="filter" type="button" data-filter="beauty" aria-pressed="false">Braids &amp; wigs</button>
+      <button class="filter" type="button" data-filter="kids" aria-pressed="false">Kids</button>
+      {% for p in TEAM %}<button class="filter" type="button" data-filter="{{ p.slug }}" aria-pressed="false">{{ p.first }}</button>{% endfor %}
+    </div>
+    <div class="masonry">
+      {% for k in GALLERY %}{% set g = M[k] %}{% set p = PRO[g.pro] %}
+      <button type="button" class="tile" data-pro="{{ g.pro }}" data-cat="{{ g.cat }}" data-full="{{ R }}assets/img/{{ g.files[-1][0] }}" data-book="{{ p.book_url }}" data-proname="{{ p.first }}" aria-label="View larger: {{ g.alt }}">
+        {{ m.img(k, '(max-width:600px) 50vw, (max-width:1100px) 33vw, 25vw') }}
+        <span class="tile__cap"><span class="pill">{{ p.first }}</span></span>
+      </button>{% endfor %}
+    </div>
+    <p class="fine">More every week on <a class="link" href="{{ S.instagram }}" target="_blank" rel="noopener">@rvapremier</a> and each pro’s Instagram.</p>
+  </div>
+</section>
+<div class="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+  <div class="lb__top"><span class="lb__count"></span><button class="lb__close" type="button" aria-label="Close"><svg><use href="#i-close"/></svg></button></div>
+  <div class="lb__stage"><button class="lb__nav lb__prev" type="button" aria-label="Previous photo"><svg><use href="#i-left"/></svg></button><img src="data:," alt=""><button class="lb__nav lb__next" type="button" aria-label="Next photo"><svg><use href="#i-right"/></svg></button></div>
+  <div class="lb__bar"><p class="lb__cap"></p><a class="btn btn--sm lb__book" href="#" target="_blank" rel="noopener"><span>Book</span><svg aria-hidden="true"><use href="#i-ext"/></svg></a></div>
+</div>
+{{ m.cta_band('See <span class="em">it.</span> Book it.', 'Found your next look? Every pro books online in about a minute.') }}
+{% endblock %}

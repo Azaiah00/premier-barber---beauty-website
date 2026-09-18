@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as m with context %}
+{% block main %}
+
+<!-- ============================== HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__media">{{ m.img('hero', '100vw', eager=True) }}</div>
+  <div class="hero__shade"></div>
+  <div class="hex-bg" aria-hidden="true"></div>
+  <div class="hero__razors" aria-hidden="true">
+    <svg viewBox="0 0 1200 800">
+      <defs>
+        <linearGradient id="blade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".48" stop-color="#d7ddef"/><stop offset=".52" stop-color="#9aa4c4"/><stop offset="1" stop-color="#eef1fa"/></linearGradient>
+        <linearGradient id="handle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1f33"/><stop offset="1" stop-color="#05060b"/></linearGradient>
+        <filter id="glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      {% for id, rot in [('razorA', -14), ('razorB', 14)] %}
+      <g id="{{ id }}" transform="rotate({{ rot }} 600 400)">
+        <g transform="translate(600 400)">
+          <path d="M22,-26 C170,-35 360,-40 528,-38 C564,-37 584,-19 584,0 C584,19 564,37 528,38 C360,40 170,35 22,26 C10,17 10,-17 22,-26 Z" fill="rgba(42,72,255,.08)" stroke="#5470ff" stroke-width="2.5" filter="url(#glow)"/>
+          <path d="M60,-14 C210,-22 380,-26 512,-24" fill="none" stroke="#5470ff" stroke-opacity=".45" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="548" cy="0" r="7" fill="none" stroke="#cfd8ff" stroke-width="2"/>
+          <path d="M-470,-48 L-150,-38 C-114,-37 -86,-31 -64,-23 L-16,-11 L-12,11 C-44,16 -78,20 -118,25 C-160,30 -190,33 -230,36 L-450,52 C-464,53 -472,46 -472,38 Z" fill="rgba(255,255,255,.05)" stroke="#ffffff" stroke-opacity=".85" stroke-width="2.5"/>
+          <path d="M-452,15 L-200,10 C-150,8 -110,5 -80,-1" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="0" cy="0" r="9" fill="none" stroke="#cfd8ff" stroke-width="2.5"/>
+        </g>
+      </g>
+      {% endfor %}
+    </svg>
+  </div>
+  <div class="wrap hero__inner">
+    <div class="hero__eyebrow" data-hero-in>
+      <span class="chip" data-open-status><span class="dot"></span><span class="txt">Midlothian · Richmond, VA</span></span>
+      <span class="chip">{{ m.stars() }}<b>{{ '%.1f' % AVG_RATING_1 }}</b>&nbsp;from {{ TOTAL_REVIEWS }}+ verified reviews</span>
+    </div>
+    <p class="kicker" data-hero-in>Barbershop &amp; beauty salon in Midlothian, VA</p>
+    <h1 id="hero-title" class="display h1" style="margin-top:14px">
+      <span class="line"><span data-split>Sharp lines.</span></span>
+      <span class="line"><span data-split><span class="em">Soft</span> glam.</span></span>
+    </h1>
+    <p class="lede hero__sub" data-hero-in>Six independent pros under one roof on Hull Street Road: master barbers for fades, tapers and hot-towel shaves, plus braids, wig installs and silk presses. Walk-ins welcome. Appointments preferred.</p>
+    <div class="hero__actions" data-hero-in>
+      <a class="btn" href="{{ R }}book.html">Book your chair<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--ghost" href="{{ R }}team.html">Meet the team</a>
+    </div>
+    <div class="hero__meta" data-hero-in>
+      <div><b data-count="{{ TOTAL_REVIEWS }}" data-suffix="+">{{ TOTAL_REVIEWS }}+</b><span>Verified client reviews</span></div>
+      <div><b>{{ '%.1f' % AVG_RATING_1 }}★</b><span>Average across our pros</span></div>
+      <div><b data-count="28">28</b><span>Years for our OG barber</span></div>
+      <div><b>6</b><span>Barbers &amp; stylists</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">Scroll<i></i></div>
+</section>
+
+<!-- ============================== MARQUEE -->
+<div class="band" aria-hidden="true">
+  <div class="marquee" data-mq-speed="30">
+    {% for k in range(2) %}<div class="marquee__group">
+      {% for w in ['Skin fades', 'Tapers', 'Hot towel shaves', 'Knotless braids', 'Wig installs', 'Line-ups', 'Silk press', 'Kids cuts', 'Designs', 'Stitch braids', 'Beard sculpting', 'Loc retwists'] %}<span>{{ w }}</span><svg viewBox="0 0 24 24"><use href="#i-sparkle"/></svg>{% endfor %}
+    </div>{% endfor %}
+  </div>
+</div>
+
+<!-- ============================== THE STANDARD -->
+<section class="section" aria-labelledby="std-title">
+  <div class="wrap">
+    <div class="head head--split">
+      <div>
+        {{ m.kicker('01', 'The Premier standard') }}
+        <h2 id="std-title" class="display h2" style="margin-top:18px" data-split>Every chair. <span class="em">Every</span> time.</h2>
+      </div>
+      <p class="lede" data-reveal>A good barber is hard to find. A good barber who also has a braider, a wig specialist and a kid-friendly chair under the same roof is harder still. Premier puts all of it on one block of Hull Street Road, with pros who have the reviews to back it up.</p>
+    </div>
+    <div class="grid pillars">
+      {% for icon, t, d in [
+        ('razor', 'Precision', 'Skin fades, tapers, afros and designs, finished with the razor. Our barbers have from 3.5 to 28 years behind the chair.'),
+        ('braid', 'Beauty', 'Knotless, Fulani and stitch braids, custom wig installs, quick weaves, silk presses and locs, all under one roof.'),
+        ('heart', 'Family', 'First haircuts at 2, teens, and 65+ regulars. Reviews repeatedly mention our barbers’ patience with kids, including children on the spectrum.'),
+        ('bolt', 'Convenience', 'Book your pro in about a minute on their live calendar, or just walk in. There’s easy parking outside, and cards are accepted.')] %}
+      <article class="pillar" data-reveal>
+        <span class="n">0{{ loop.index }}</span>
+        <div class="pillar__icon"><svg aria-hidden="true"><use href="#i-{{ icon }}"/></svg></div>
+        <h3>{{ t }}</h3>
+        <p>{{ d }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TEAM (pinned horizontal) -->
+<section class="section" aria-labelledby="team-title" style="padding-top:0">
+  <div class="team-rail" data-pin>
+    <div class="wrap" style="padding-top:clamp(40px,6vw,90px)">
+      <div class="head head--split" style="margin-bottom:clamp(28px,4vw,48px)">
+        <div>
+          {{ m.kicker('02', 'The team') }}
+          <h2 id="team-title" class="display h2" style="margin-top:18px" data-split>Pick your <span class="em">stylist.</span></h2>
+        </div>
+        <p class="lede" data-reveal>Every pro at Premier runs their own book. See their work, compare their menus, and book straight into their real calendar.</p>
+      </div>
+      <div class="team-track">
+        {% for p in TEAM %}{{ m.pro_card(p) }}{% endfor %}
+        <article class="pro" style="display:grid;place-items:center;text-align:center;padding:32px;background:linear-gradient(160deg,var(--royal),var(--royal-deep))">
+          <div>
+            <p class="display h3">Can’t decide?</p>
+            <p style="margin:14px 0 22px;color:rgba(255,255,255,.85)">Compare every pro’s menu and prices side by side, then pick the chair that fits.</p>
+            <a class="btn btn--white" href="{{ R }}services.html">Compare menus<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+      </div>
+      <p class="team-hint"><svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg>Swipe to see the whole team.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SERVICES TEASER -->
+<section class="section" aria-labelledby="menu-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="head head--split">
+      <div>
+        {{ m.kicker('03', 'The menu') }}
+        <h2 id="menu-title" class="display h2" style="margin-top:18px" data-split>Barber <span class="em">&amp;</span> beauty.</h2>
+      </div>
+      <p class="lede" data-reveal>Real prices from each pro’s live booking page. No surprises when you sit down.</p>
+    </div>
+    <div class="split">
+      {% for side in TEASER %}
+      <article class="menu-card" data-reveal>
+        <div class="menu-card__bg" aria-hidden="true">{{ m.img(side.img, '(max-width:900px) 100vw, 50vw', alt='') }}</div>
+        <p class="kicker">{{ side.kicker }}</p>
+        <h3 style="margin-top:14px">{{ side.title }}</h3>
+        <ul class="menu-list">
+          {% for name, price, by in side['items'] %}<li><span class="name">{{ name }}<span class="by">{{ by }}</span></span><span class="dots"></span><span class="price">{{ price }}</span></li>{% endfor %}
+        </ul>
+        <a class="link" href="{{ R }}services.html#{{ side.anchor }}" style="margin-top:22px">See the full {{ side.title|lower }} menu<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============================== WORK STRIPS -->
+<section class="section--tight" aria-labelledby="work-title" style="overflow:hidden">
+  <div class="wrap">
+    <div class="head head--split">
+      <div>
+        {{ m.kicker('04', 'The work') }}
+        <h2 id="work-title" class="display h2" style="margin-top:18px" data-split>Fresh <span class="em">out</span> the chair.</h2>
+      </div>
+      <p class="lede" data-reveal>Straight from our pros’ books: real clients, real cuts, real installs. No stock photos.</p>
+    </div>
+  </div>
+  <div class="strips" aria-label="Recent work">
+    {% for row in STRIPS %}<div class="strip">
+      {% for k in row %}<figure>{{ m.img(k, '(max-width:600px) 220px, 320px') }}</figure>{% endfor %}
+    </div>{% endfor %}
+  </div>
+  <div class="wrap" style="margin-top:34px"><a class="btn btn--ghost" href="{{ R }}gallery.html">Browse the full gallery<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+</section>
+
+<!-- ============================== REVIEWS -->
+<section class="section" aria-labelledby="rev-title">
+  <div class="wrap">
+    <div class="head">
+      {{ m.kicker('05', 'The proof') }}
+      <h2 id="rev-title" class="display h2" data-split>Don’t take <span class="em">our</span> word for it.</h2>
+    </div>
+    <div class="stats" data-reveal>
+      <div class="stat"><b data-count="{{ TOTAL_REVIEWS }}">{{ TOTAL_REVIEWS }}</b><span>Verified reviews across Booksy, StyleSeat &amp; theCut</span></div>
+      <div class="stat"><b>{{ '%.1f' % AVG_RATING_1 }}</b><span>Average star rating, weighted by review count</span></div>
+      <div class="stat"><b data-count="341">341</b><span>Reviews for OG Darnell alone, all at 5.0★</span></div>
+      <div class="stat"><b data-count="1144" data-suffix="+">1,144+</b><span>Followers on @rvapremier</span></div>
+    </div>
+    <div class="quotes">
+      {% for q in QUOTES %}
+      <figure class="quote" data-reveal>
+        <blockquote>{{ q.text }}</blockquote>
+        <figcaption><span><b>{{ q.who }}</b> · verified client</span><a href="{{ R }}team/{{ q.slug }}.html">for {{ q.first }}</a></figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============================== THE SPACE -->
+<section class="section" aria-labelledby="space-title" style="padding-top:0">
+  <div class="wrap space">
+    <div class="space__imgs">
+      <figure class="clip-reveal">{{ m.img('space-chair', '(max-width:900px) 60vw, 34vw') }}</figure>
+      <figure class="clip-reveal">{{ m.img('space-wide', '(max-width:900px) 40vw, 22vw') }}</figure>
+      <figure class="clip-reveal">{{ m.img('space-room', '(max-width:900px) 40vw, 22vw') }}</figure>
+    </div>
+    <div>
+      {{ m.kicker('06', 'The space') }}
+      <h2 id="space-title" class="display h2" style="margin-top:18px" data-split>Royal blue. <span class="em">Good</span> vibes.</h2>
+      <p class="lede" style="margin-top:22px" data-reveal>Hexagon lights overhead, royal-blue walls, a pool table, a lounge and a lot of conversation. Premier is the kind of shop where you come in for a line-up and stay for the talk.</p>
+      <ul class="hexlist" data-reveal>
+        {% for icon, t in [('car', 'Easy parking'), ('card', 'Cards accepted'), ('child', 'Kid friendly'), ('wifi', 'Wi-Fi'), ('walk', 'Walk-ins welcome'), ('sparkle', 'Clean & relaxing')] %}
+        <li><span class="hx"><svg aria-hidden="true"><use href="#i-{{ icon }}"/></svg></span>{{ t }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ -->
+<section class="section" aria-labelledby="faq-title" style="padding-top:0">
+  <div class="wrap faq">
+    <div>
+      {{ m.kicker('07', 'Good to know') }}
+      <h2 id="faq-title" class="display h2" style="margin-top:18px" data-split>Questions, <span class="em">answered.</span></h2>
+      <p class="lede" style="margin-top:22px" data-reveal>Still wondering? Call or text the shop at <a class="link" href="{{ S.phone_href }}">{{ S.phone }}</a></p>
+    </div>
+    <div class="faq__list" data-reveal>
+      {% for q, a in FAQ %}
+      <details{% if loop.first %} open{% endif %}><summary>{{ q }}<i aria-hidden="true"></i></summary><div class="ans"><p>{{ a }}</p></div></details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VISIT -->
+<section class="section" aria-labelledby="visit-title" style="padding-top:0" id="visit">
+  <div class="wrap">
+    <div class="head">
+      {{ m.kicker('08', 'Pull up') }}
+      <h2 id="visit-title" class="display h2" data-split>Hull Street <span class="em">Road.</span></h2>
+    </div>
+    {{ m.visit_block() }}
+  </div>
+</section>
+
+{{ m.cta_band('Your next cut <span class="em">starts</span> here.', 'Pick your pro, choose a service and lock in a time in about a minute. Or walk in, and we’ll get you right.') }}
+{% endblock %}
