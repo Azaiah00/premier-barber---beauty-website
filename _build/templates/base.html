@@ -12,11 +12,18 @@
 <meta property="og:site_name" content="{{ S.name }}">
 <meta property="og:title" content="{{ og_title or title }}">
 <meta property="og:description" content="{{ description }}">
-<meta property="og:url" content="{{ canonical }}">
-<meta property="og:image" content="{{ S.domain }}/assets/brand/og-image.jpg">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:url" content="{{ share_page }}">
+<meta property="og:image" content="{{ og_image or og_default }}">
+<meta property="og:image:secure_url" content="{{ og_image or og_default }}">
+{% if og_image_type %}<meta property="og:image:type" content="{{ og_image_type }}">{% else %}<meta property="og:image:type" content="image/jpeg">{% endif %}
+<meta property="og:image:width" content="{{ og_image_width or '1200' }}"><meta property="og:image:height" content="{{ og_image_height or '630' }}">
+<meta property="og:image:alt" content="Premier Barber &amp; Beauty Salon — barbershop and beauty studio in Midlothian, VA">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ og_title or title }}">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="{{ og_image or og_default }}">
+<link rel="image_src" href="{{ og_image or og_default }}">
 <meta name="geo.region" content="US-VA"><meta name="geo.placename" content="Midlothian"><meta name="geo.position" content="{{ S.geo[0] }};{{ S.geo[1] }}"><meta name="ICBM" content="{{ S.geo[0] }}, {{ S.geo[1] }}">
 <link rel="icon" href="{{ R }}favicon.ico" sizes="48x48">
 <link rel="icon" href="{{ R }}assets/brand/premier-monogram.svg" type="image/svg+xml">

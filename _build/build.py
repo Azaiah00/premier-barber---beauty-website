@@ -12,7 +12,14 @@ M = json.load(open(os.path.join(DIST, 'assets', 'manifest.json')))
 V = datetime.datetime.now().strftime('%Y%m%d%H%M')
 UPDATED = 'September 2026'
 S = data.SITE
-DOMAIN = S['domain']
+DOMAIN = S['domain'].rstrip('/')
+# Link previews (iMessage, SMS, social) must load og:image from a live host. Netlify sets URL
+# on deploy; until premierbarberbeauty.com is live, fall back to the Netlify site URL.
+SHARE_BASE = (
+    os.environ.get('URL', '').rstrip('/')
+    or os.environ.get('DEPLOY_PRIME_URL', '').rstrip('/')
+    or 'https://premier-barber-beauty-website.netlify.app'
+)
 
 env = Environment(loader=FileSystemLoader(os.path.join(HERE, 'templates')), autoescape=select_autoescape(['html']), trim_blocks=True, lstrip_blocks=True)
 
@@ -201,7 +208,8 @@ BOOKING = {
 }
 
 COMMON = dict(S=S, TEAM=TEAM, PRO=PRO, M=M, V=V, NAV=NAV, fmt=fmt, money=money, TOTAL_REVIEWS=TOTAL_REVIEWS, AVG_RATING_1=AVG_RATING_1,
-              FAQ=data.FAQ, hours_json=json.dumps(S['hours']), UPDATED=UPDATED)
+              FAQ=data.FAQ, hours_json=json.dumps(S['hours']), UPDATED=UPDATED,
+              share_base=SHARE_BASE, og_default=f'{SHARE_BASE}/assets/brand/og-image.jpg')
 
 PAGES = []
 
@@ -209,6 +217,9 @@ PAGES = []
 def render(tpl, out, **ctx):
     depth = out.count('/')
     R = '../' * depth
+    # og:url should match the host people share (Netlify now, custom domain later).
+    if 'canonical' in ctx and 'share_page' not in ctx:
+        ctx['share_page'] = ctx['canonical'].replace(DOMAIN, SHARE_BASE, 1)
     html = env.get_template(tpl).render(R=R, **COMMON, **ctx)
     html = re.sub(r'\n\s*\n+', '\n', html)
     path = os.path.join(DIST, out)
@@ -226,7 +237,14 @@ render('index.html', 'index.html', page='home', priority=1.0,
        title='Premier Barber & Beauty | Barbershop & Salon in Midlothian, VA',
        og_title='Premier Barber & Beauty Salon: Sharp lines. Soft glam.',
        description=f'Midlothian barbershop & beauty salon on Hull St Rd: fades, tapers, shaves, kids cuts, braids & wig installs. {AVG_RATING_1}★ from {TOTAL_REVIEWS} reviews. Book online.',
-       canonical=canon('/'), preload_img=hero_pre, jsonld=[ld(BUSINESS), ld(FAQ_LD)],
+       canonical=canon('/'),
+       # Hero photo for share cards (JPEG og-image.jpg on inner pages; home uses hero).
+       og_image=f'{SHARE_BASE}/assets/img/{hero_pre}',
+       og_image_type='image/webp', og_image_width='1600', og_image_height='900',
+       # Uncomment next 3 lines and remove og_image* above to use the logo card (1200×630 JPG) instead:
+       # og_image=f'{SHARE_BASE}/assets/brand/og-image.jpg',
+       # og_image_type=None, og_image_width='1200', og_image_height='630',
+       preload_img=hero_pre, jsonld=[ld(BUSINESS), ld(FAQ_LD)],
        TEASER=TEASER, STRIPS=STRIPS, QUOTES=QUOTES)
 render('team.html', 'team.html', page='team', priority=0.9,
        title='Meet the Barbers & Stylists | Premier Barber & Beauty',

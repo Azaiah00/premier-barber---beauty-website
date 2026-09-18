@@ -3,7 +3,8 @@
 
 [build]
   publish = "."
-  command = ""
+  # Regenerate HTML with Netlify's URL in og:image / og:url so text-message previews work.
+  command = "pip install -r requirements.txt && python _build/build.py"
 
 # Clean URLs: /team -> team.html, /team/maal -> team/maal.html (Netlify serves .html automatically).
 # Old Squarespace paths → new pages

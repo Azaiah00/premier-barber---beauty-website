@@ -1,0 +1,2 @@
+# Used by Netlify build (python _build/build.py) to refresh share-preview meta tags.
+jinja2>=3.1.0
